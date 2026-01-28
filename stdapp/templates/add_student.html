@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="card shadow-lg border-0">
+            <div class="card-header bg-success text-white py-3">
+                <h4 class="mb-0 text-center"><i class="bi bi-person-plus-fill me-2"></i>Add New Student</h4>
+            </div>
+            <div class="card-body p-4">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        {{ form.as_p }}
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-success rounded-pill">Create Student Account</button>
+                        <a href="{% url 'dashboard' %}" class="btn btn-outline-secondary rounded-pill">Back to Dashboard</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
